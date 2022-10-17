@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "72ae7801-4e77-422d-b8ae-2b31ffc2b7af",
+		"name": "Deel Backend Home Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5891992"
+	},
+	"item": [
+		{
+			"name": "Get a specific contract of an user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "profile_id",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/contracts/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"contracts",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all non-terminated contracts of an user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "profile_id",
+						"value": "3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/contracts",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"contracts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Paid a job",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "profile_id",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/jobs/:job_id/pay",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"jobs",
+						":job_id",
+						"pay"
+					],
+					"variable": [
+						{
+							"key": "job_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get unpaid jobs of active contracts of an user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "profile_id",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/jobs/unpaid",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"jobs",
+						"unpaid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Returns the clients the paid the most for jobs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "profile_id",
+						"value": "1",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/admin/best-clients?start=2020-08-14&end=2020-08-17&limit=3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"best-clients"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2020-08-14"
+						},
+						{
+							"key": "end",
+							"value": "2020-08-17"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Returns professions that earned the most money",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "profile_id",
+						"value": "1",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/admin/best-profession?start=2020-08-16&end=2020-08-18",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"best-profession"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2020-08-16"
+						},
+						{
+							"key": "end",
+							"value": "2020-08-18"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit into balance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "profile_id",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/balances/deposit/:userId",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"balances",
+						"deposit",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "profile_id",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/profiles/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"profiles",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all profiles",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "profile_id",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/profiles",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
